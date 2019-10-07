@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <script>
+             
+             //Ok, let's try to restart from where we stopped: 
+
+             //First I can run the machine, or what the project is asking
+             //me to call the computerplay() function. I'll do that using
+             //Math.random(), I still don't know if I'm using that right. 
+             //As a matter of fact, I'm almost positive there is a more
+             //proper way to use that function here in this situation, but
+             //my intention is to try to solve this project using the 
+             //least amount of google search that I can. I'll see if it's
+             //possible to solve it with the amount of knowledge I already
+             //have about functions. I believe it should be possible.
+
+             //So, I'll run the machine:
+
+
+             function computerplay() {
+                 computerchoice = Math.random()
+
+                 if (computerchoice < 0.3333333333333333) {
+                     computeroutcome = "Rock";
+                 } else if(computerchoice > 0.6666666666666666) {
+                    computeroutcome = "Scisors";
+                 } else {
+                    computeroutcome = "Paper";
+                 }
+             }
+
+             //It returned an error: "computeroutcome not defined".
+             //I'll try something different. 
+
+
+             function computerplay() {
+                 computerchoice = Math.random()
+
+                 if (computerchoice < 0.3333333333333333) {
+                    "Rock"
+                 } else if(computerchoice > 0.6666666666666666) {
+                    "Scisors"
+                 } else {
+                    "Paper"
+                 }
+            }
+
+
+            //Ok, this is not working as a function. It keeps returning
+            //"undefined". But when I run the parts independently then 
+            //they work just fine and return the associated symbol. 
+
+
+                 computerchoice = Math.random()
+
+                 if (computerchoice < 0.3333333333333333) {
+                    comoputeroutcome = "Rock";
+                 } else if(computerchoice > 0.6666666666666666) {
+                    computeroutcome = "Scisors";
+                 } else {
+                    computeroutcome = "Paper";
+                 }
+
+                playerchoice = prompt("Choose 'Rock', 'Papers' or 'Scisors': ","");
+
+                if (computeroutcome == playerchoice) {
+                    "It's a tie"
+                } else if (computeroutcome == "Rock" && playerchoice == "Paper") {
+                    "Paper wins Rock. You win!"
+                } else if (computeroutcome == "Paper" && playerchoice == "Scisors") {
+                    "Scisors win Paper. you win!"
+                } else if (computeroutcome == "Scisors" && playerchoice == "Rock") {
+                    "Rock wins Scisors. You win!"
+                } else {
+                    "You lost!"
+                }
+
+            
+            </script>
+    </body>
+</html>
