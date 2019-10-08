@@ -6,80 +6,152 @@
     <body>
         <script>
              
-             //Ok, let's try to restart from where we stopped: 
 
-             //First I can run the machine, or what the project is asking
-             //me to call the computerplay() function. I'll do that using
-             //Math.random(), I still don't know if I'm using that right. 
-             //As a matter of fact, I'm almost positive there is a more
-             //proper way to use that function here in this situation, but
-             //my intention is to try to solve this project using the 
-             //least amount of google search that I can. I'll see if it's
-             //possible to solve it with the amount of knowledge I already
-             //have about functions. I believe it should be possible.
+            
+                
 
-             //So, I'll run the machine:
+            function computerPlay() {
 
+                computerchoice = Math.random();
 
-             function computerplay() {
-                 computerchoice = Math.random()
-
-                 if (computerchoice < 0.3333333333333333) {
-                     computeroutcome = "Rock";
+                if (computerchoice < 0.3333333333333333) {
+                    Selection = "rock";
                  } else if(computerchoice > 0.6666666666666666) {
-                    computeroutcome = "Scisors";
+                    Selection = "scissors";
                  } else {
-                    computeroutcome = "Paper";
+                    Selection = "paper";
                  }
-             }
+                 return Selection;
+                }
+            
 
-             //It returned an error: "computeroutcome not defined".
-             //I'll try something different. 
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection == computerSelection) {
+                    gameDisplay = "It's a tie!" + playerSelection + " ties " + computerSelection;
+                } else if(playerSelection == "paper" && computerSelection == "rock") {
+                    gameDisplay = "You win! " + playerSelection + " beats " + computerSelection;
+                } else if (playerSelection == "scissors" && computerSelection == "paper") {
+                    gameDisplay = "You win! " + playerSelection + " beats " + computerSelection;
+                } else if (playerSelection == "rock" && computerSelection == "scissors") {
+                    gameDisplay = "You win! " + playerSelection + " beats " + computerSelection;
+                } else {
+                    gameDisplay = "You lose! " + computerSelection + " beats " + playerSelection;
+                }
+                return gameDisplay;
+            }
+
+           /*
+           
+            function game() {
+                let round1 = playRound(playerSelection, computerSelection);
+                let win = 0;
+                let loss = 0;
+                let tie = 0;
+
+                if (round1.charAt(4) == "w") {
+                    win++; 
+                } else if (round1.charAt(4) == "l") {
+                    loss++;
+                } else {
+                    tie++;
+                }
+                
+                console.log(" --  Round 1  -- " + round1);
+                console.log("Score: win: " + win + " ,losses: " + loss + " ,ties: " + tie + ". Next round!");
+             
 
 
-             function computerplay() {
-                 computerchoice = Math.random()
+                let round2 = playRound(playerSelection, computerSelection);
 
-                 if (computerchoice < 0.3333333333333333) {
-                    "Rock"
-                 } else if(computerchoice > 0.6666666666666666) {
-                    "Scisors"
-                 } else {
-                    "Paper"
-                 }
+                if (round2.charAt(4) == "w") {
+                    win++; 
+                } else if (round2.charAt(4) == "l") {
+                    loss++;
+                } else {
+                    tie++;
+                }
+
+                console.log(" --  Round 2  -- " + round2);
+                console.log("Score: win: " + win + " ,losses: " + loss + " ,ties: " + tie + ". Next round!");
+             
+
+                let round3 = playRound(playerSelection, computerSelection);
+
+                if (round3.charAt(4) == "w") {
+                    win++;
+                } else if (round3.charAt(4) == "l") {
+                    loss++;
+                } else {
+                    tie++;
+                }
+
+                console.log(" --  Round 3  -- " + round3);
+                console.log("Score: win: " + win + " ,losses: " + loss + " ,ties: " + tie + ". Next round!");
+               
+
+
+                let round4 = playRound(playerSelection, computerSelection);
+
+                if (round4.charAt(4) == "w") {
+                    win++;
+                } else if (round4.charAt(4) == "l") {
+                    loss++;
+                } else {
+                    tie++;
+                }
+
+                console.log(" --  Round 4  -- " + round4);
+                console.log("Score: win: " + win + " ,losses: " + loss + " ,ties: " + tie + ". Next round!");
+               
+
+                let round5 = playRound(playerSelection, computerSelection);
+
+                if (round5.charAt(4) == "w") {
+                    win++;
+                } else if (round5.charAt(4) == "l") {
+                    loss++;
+                } else {
+                    tie++;
+                } 
+                
+                console.log(" --  Round 5  -- " + round5);
+                console.log("Score: win: " + win + " ,losses: " + loss + " ,ties: " + tie + ". Next round!");
+            
             }
 
 
-            //Ok, this is not working as a function. It keeps returning
-            //"undefined". But when I run the parts independently then 
-            //they work just fine and return the associated symbol. 
+*/
 
 
-                 computerchoice = Math.random()
+            function game() { 
+                
+                    for (let i=1; i<6; i++) {
+                        let round = playRound(playerSelection, computerSelection);
+                        if (round.charAt(4) == "w") {
+                            win++;
+                        } else if(round.charAt(4) == "l") {
+                            loss++;
+                        } else {
+                            tie++;
+                        }
+                        
+                        console.log(round);
+                        console.log("  ROUND  " + i + " Score: WIN: "+win+" LOSSES: "+loss+" TIES: "+tie+". Next round.")                        
+                    }
 
-                 if (computerchoice < 0.3333333333333333) {
-                    comoputeroutcome = "Rock";
-                 } else if(computerchoice > 0.6666666666666666) {
-                    computeroutcome = "Scisors";
-                 } else {
-                    computeroutcome = "Paper";
-                 }
+            }
 
-                playerchoice = prompt("Choose 'Rock', 'Papers' or 'Scisors': ","");
 
-                if (computeroutcome == playerchoice) {
-                    "It's a tie"
-                } else if (computeroutcome == "Rock" && playerchoice == "Paper") {
-                    "Paper wins Rock. You win!"
-                } else if (computeroutcome == "Paper" && playerchoice == "Scisors") {
-                    "Scisors win Paper. you win!"
-                } else if (computeroutcome == "Scisors" && playerchoice == "Rock") {
-                    "Rock wins Scisors. You win!"
-                } else {
-                    "You lost!"
-                }
 
+
+
+            const computerSelection = computerPlay();
+            let playerSelection = prompt("Choose 'Rock', 'Paper' or 'Scissors':", "");
             
+            console.log(game());
+
+
+
             </script>
     </body>
 </html>
