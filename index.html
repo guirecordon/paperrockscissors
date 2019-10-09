@@ -37,128 +37,136 @@
             }
 
 
-            // Eu queria fazer esse aqui funcionar primeiro, porque tá sem o loop. Como ainda não vi
-            //loop eu queria fazer assim. 
-
-
-            //O resultado da função playRound(playerSelection, computerSelection) é uma mensagem 
-            // "You win" ou "You lose", daí eu uso a função charAt(4) para pegar a letra "w" no caso de
-            // vitória ou o "l" no caso de derrota. É meio Tabajara, mas parece que funciona. Enfim, o meu
-            // problema é que o prompt só aparece uma vez, na primeira, e depois roda todos os resultados
-            //iguais. 
-
-            //Eu commented out esse código aqui em baixo e acabei fazendo um loop lá em baixo mesmo, que é
-            // o que tá rodando agora, mas o problema é o mesmo nos dois códigos.
-
-
-           /*
-           
             function game() {
-                let round1 = playRound(playerSelection, computerSelection);
-                let win = 0;
-                let loss = 0;
-                let tie = 0;
-
-                if (round1.charAt(4) == "w") {
-                    win++; 
-                } else if (round1.charAt(4) == "l") {
-                    loss++;
-                } else {
-                    tie++;
-                }
                 
-                console.log(" --  Round 1  -- " + round1);
-                console.log("Score: win: " + win + " ,losses: " + loss + " ,ties: " + tie + ". Next round!");
-             
+                // ROUND 1
+                playerInput = prompt("Enter rock, paper or scissors: ", "");
+                playerSelection = playerInput.toLowerCase(); 
+                computerSelection = computerPlay();
 
+                round1 = playRound(playerSelection, computerSelection); 
 
-                let round2 = playRound(playerSelection, computerSelection);
+                console.log(round1);
 
-                if (round2.charAt(4) == "w") {
-                    win++; 
-                } else if (round2.charAt(4) == "l") {
-                    loss++;
-                } else {
-                    tie++;
-                }
+                let win = 0; loss = 0; tie = 0;
 
-                console.log(" --  Round 2  -- " + round2);
-                console.log("Score: win: " + win + " ,losses: " + loss + " ,ties: " + tie + ". Next round!");
-             
-
-                let round3 = playRound(playerSelection, computerSelection);
-
-                if (round3.charAt(4) == "w") {
-                    win++;
-                } else if (round3.charAt(4) == "l") {
-                    loss++;
-                } else {
-                    tie++;
-                }
-
-                console.log(" --  Round 3  -- " + round3);
-                console.log("Score: win: " + win + " ,losses: " + loss + " ,ties: " + tie + ". Next round!");
-               
-
-
-                let round4 = playRound(playerSelection, computerSelection);
-
-                if (round4.charAt(4) == "w") {
-                    win++;
-                } else if (round4.charAt(4) == "l") {
-                    loss++;
-                } else {
-                    tie++;
-                }
-
-                console.log(" --  Round 4  -- " + round4);
-                console.log("Score: win: " + win + " ,losses: " + loss + " ,ties: " + tie + ". Next round!");
-               
-
-                let round5 = playRound(playerSelection, computerSelection);
-
-                if (round5.charAt(4) == "w") {
-                    win++;
-                } else if (round5.charAt(4) == "l") {
-                    loss++;
-                } else {
-                    tie++;
-                } 
-                
-                console.log(" --  Round 5  -- " + round5);
-                console.log("Score: win: " + win + " ,losses: " + loss + " ,ties: " + tie + ". Next round!");
-            
-            }
-
-
-*/
-
-
-            function game() { 
-                
-                    for (let i=1; i<6; i++) {
-                        let round = playRound(playerSelection, computerSelection);
-                        if (round.charAt(4) == "w") {
-                            win++;
-                        } else if(round.charAt(4) == "l") {
-                            loss++;
-                        } else {
-                            tie++;
-                        }
-                        
-                        console.log(round);
-                        console.log("  ROUND  " + i + " Score: WIN: "+win+" LOSSES: "+loss+" TIES: "+tie+". Next round.")                        
+                    if (round1.charAt(4) == "w") {
+                        win++;
+                    } else if (round1.charAt(4) =="l") {
+                        loss++;
+                    } else {
+                        tie++;
                     }
 
+                score = "End of Round 1 -- Wins: " + win + " , Losses: " + loss + " , Ties: " + tie;
+                
+                console.log(score);
+
+
+                //ROUND 2
+                playerInput = prompt("Enter rock, paper or scissors: ", "");
+                playerSelection = playerInput.toLowerCase(); 
+                computerSelection = computerPlay();
+
+                round2 = playRound(playerSelection, computerSelection); 
+
+                console.log(round2);
+
+                    if (round2.charAt(4) == "w") {
+                        win++;
+                    } else if (round2.charAt(4) =="l") {
+                        loss++;
+                    } else {
+                        tie++;
+                    }
+                
+                score = "End of Round 2 -- Wins: " + win + " , Losses: " + loss + " , Ties: " + tie;
+                
+                console.log(score);
+
+
+                //ROUND 3
+                playerInput = prompt("Enter rock, paper or scissors: ", "");
+                playerSelection = playerInput.toLowerCase(); 
+                computerSelection = computerPlay();
+
+                round3 = playRound(playerSelection, computerSelection); 
+
+                console.log(round3);
+
+                    if (round3.charAt(4) == "w") {
+                        win++;
+                    } else if (round3.charAt(4) =="l") {
+                        loss++;
+                    } else {
+                        tie++;
+                    }
+                
+                score = "End of Round 3 -- Wins: " + win + " , Losses: " + loss + " , Ties: " + tie;
+                
+                console.log(score);
+
+
+                //ROUND 4
+                playerInput = prompt("Enter rock, paper or scissors: ", "");
+                playerSelection = playerInput.toLowerCase(); 
+                computerSelection = computerPlay();
+
+                round4 = playRound(playerSelection, computerSelection); 
+
+                console.log(round4);
+
+                    if (round4.charAt(4) == "w") {
+                        win++;
+                    } else if (round4.charAt(4) =="l") {
+                        loss++;
+                    } else {
+                        tie++;
+                    }
+                
+                score = "End of Round 4 -- Wins: " + win + " , Losses: " + loss + " , Ties: " + tie;
+                
+                console.log(score);
+
+
+                //ROUND 5
+                playerInput = prompt("Enter rock, paper or scissors: ", "");
+                playerSelection = playerInput.toLowerCase(); 
+                computerSelection = computerPlay();
+
+                round5 = playRound(playerSelection, computerSelection); 
+
+                console.log(round5);
+
+                    if (round5.charAt(4) == "w") {
+                        win++;
+                    } else if (round5.charAt(4) =="l") {
+                        loss++;
+                    } else {
+                        tie++;
+                    }
+                
+                score = "End of Round 5 -- Wins: " + win + " , Losses: " + loss + " , Ties: " + tie;
+                
+                console.log(score);
+
+                    //Final Score Function
+                    function finalScore() {
+                        if (win > loss) {
+                            result = "You win " + win + " to " + loss;
+                        } else if (loss > win) {
+                            result = "Computer wins " + loss + " to " + win;
+                        } else {
+                            result = "You tied " + win + " to " + loss;
+                        }
+                        return result;
+                    }
+
+                console.log("FINAL SCORE " + finalScore());
             }
 
 
-
-
-
-            const computerSelection = computerPlay();
-            let playerSelection = prompt("Choose 'Rock', 'Paper' or 'Scissors':", "");
-            
+            //PLAY GAME 
             console.log(game());
 
 
