@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #dd8c56;
+}
+
+header{
+    background: white;
+    padding: 20px;
+}
+
+header > h1 {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.game-console {
+    position: relative;
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 10%;
+    width: 550px;
+}
+
+.computer-hand {
+    position: absolute;
+    top: 10px;
+    left: 220px;
+    border: 4px solid white;
+    border-radius: 25%;
+    width: 100px;
+    height: 100px;
+    transition: all 400ms;
+}
+
+.player-hand {
+    position: absolute;
+    bottom: 10px;
+    left: 220px;
+    border: 4px solid white;
+    border-radius: 25%;
+    width: 100px;
+    height: 100px;
+    transition: all 0.7s;
+}
+
+.play-rock {
+    background:url('images/rock.png') bottom center no-repeat;
+    background-size: 80%;
+}
+
+.play-paper {
+    background:url('images/paper.png') bottom center no-repeat;
+    background-size: 80%;
+}
+
+.play-scissors {
+    background:url('images/scissors.png') bottom center no-repeat;
+    background-size: 80%;
+}
+
+.winnerglow {
+    transform: scale(1.1);
+    border-color: rgb(27, 240, 44);
+    box-shadow: 0 0 10px rgb(27, 240, 44);    
+}
+
+.loserglow {
+    transform: scale(1.1);
+    border-color: rgb(248, 24, 91);
+    box-shadow: rgb(248, 24, 91);
+}
+
+.tieglow {
+    transform: scale(1.1);
+    border-color: rgb(74, 101, 122);
+}
+
+.score-board {
+    position: relative;
+    margin: 130px auto;
+    border: 3px dotted white;
+    border-radius: 5%;
+    width: 450px;
+    color: white;
+    font-size: 36px;
+    padding: 15px 20px;
+    font-family: 'Permanent Marker', cursive;   
+}
+
+.player-badge {
+    background: #241c17;
+    font-size: 14px;
+    padding: 2px 10px;
+}
+
+#computer-label {
+    position: absolute;
+    top: -15px;
+    left: 180px;
+}
+
+#user-label {
+    position: absolute;
+    bottom: -15px;
+    left: 185px;
+}
+
+#computer-score {
+    position: relative;
+    left: 185px;
+}
+
+#user-score {
+    position: relative;
+    left: 185px;
+}
+
+.display-result {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 26px;
+    color: white;
+}
+
+img.hand-icon {
+    max-width: 60px;
+    max-height: 60px;
+}
+
+.buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.gameButton {
+    display: inline-block;
+    border: 4px solid black;
+    border-radius: 25%;
+    margin: 0px 10px;
+    padding: 15px;
+    background: white;
+}
+
+.gameButton:hover {
+    cursor: pointer;
+    background: #a89b93;
+}
+
+.refresh {
+    position: relative;
+    margin: 10px auto;
+    background: #a89b93;
+    color: antiquewhite;
+    font-family: sans-serif;
+    text-transform: lowercase;
+    font-size: small;
+    width: 100px;
+    border: antiquewhite 3px solid;
+}
+
+.refresh:hover {
+    border: black 3px solid;
+    color: black;
+    background: rgb(124, 224, 124);
+    cursor: pointer;
+}
+
